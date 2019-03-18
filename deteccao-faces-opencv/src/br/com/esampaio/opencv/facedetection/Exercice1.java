@@ -6,6 +6,7 @@ import org.opencv.core.MatOfRect;
 import org.opencv.core.Point;
 import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
+import org.opencv.core.Size;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
@@ -15,15 +16,24 @@ public class Exercice1 {
 		System.out.println("opencv version: "+Core.VERSION);
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);	
 //		Mat imgage = Imgcodecs.imread("pessoas/faceolho.jpg");
-		Mat imgage = Imgcodecs.imread("pessoas/beatles.jpg");
-//		Mat imgage = Imgcodecs.imread("pessoas/pessoas3.jpg");
+//		Mat imgage = Imgcodecs.imread("pessoas/beatles.jpg");
+		Mat imgage = Imgcodecs.imread("pessoas/pessoas2.jpg");
 		
 		Mat grayedImage = new Mat();
 		Imgproc.cvtColor(imgage, grayedImage, Imgproc.COLOR_BGR2GRAY);
 		
 		CascadeClassifier cascadeClassifier  = new CascadeClassifier("cascades/haarcascade_frontalface_default.xml");
 		MatOfRect detectedFaces = new MatOfRect();
-		cascadeClassifier.detectMultiScale(grayedImage, detectedFaces);
+		cascadeClassifier.detectMultiScale(
+				grayedImage, 
+				detectedFaces,
+				1.19,
+				1,
+				0,
+				new Size(30,30),
+				new Size(500,500)
+				
+				);
 		System.out.println("detected Faces: "+detectedFaces.toArray().length);
 		
 		for(Rect rect : detectedFaces.toArray()) {
