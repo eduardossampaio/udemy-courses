@@ -10,4 +10,4 @@ Repository for save Udemy courses code that I made. This Repository was created 
 - Description: Aprenda passo a passo como utilizar o Java e o OpenCV para detectar faces em imagens e pela webcam!
 - Branch: [deteccao-faces-open-cv](https://github.com/eduardossampaio/udemy-courses/tree/deteccao-faces-opencv-java)
 - Keywords: Java, OpenCV, Computer Vision, Face detection
-- Concluded: 55%
+- Concluded: 100%
