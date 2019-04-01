@@ -70,7 +70,7 @@ public class WebcamForm extends JFrame{
 				grayedImage, 
 				detectedFaces,
 				1.19,
-				1,
+				2,
 				0,
 				new Size(100,100));
 		return detectedFaces.toArray();
